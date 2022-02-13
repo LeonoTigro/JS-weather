@@ -49,10 +49,9 @@
         width: 300px;
         height: 200px;
         border-bottom: #ffffffab 10px solid;
-      }
-
-      .img {
-        width: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
       }
 
       .bot {
@@ -113,16 +112,16 @@
               location[index].weatherElement[1].time[0].parameter
                 .parameterName <= 30
             ) {
-              var weatherImg = "sun.jpg";
+              var weatherImg = "sun.png";
               var cardColor = "#7AA4A6";
             } else if (
               location[index].weatherElement[1].time[0].parameter
                 .parameterName <= 60
             ) {
-              var weatherImg = "cloudy.jpg";
+              var weatherImg = "clouds.png";
               var cardColor = "#4E6A79";
             } else {
-              var weatherImg = "rain.jpg";
+              var weatherImg = "rain.png";
               var cardColor = "#2C4357";
             }
 
@@ -139,7 +138,7 @@
                                     <p>天氣狀況<br>${report}</p>
                                 </div>
                                 <div class="right feel">
-                                    <p>體感：${feels}</p>
+                                    <p>體感：<br>${feels}</p>
                                 </div>
                             </div>
                             <div class="celsius">
@@ -148,15 +147,6 @@
                         </div>
                     </div>    
                     `;
-
-            // if (location[index].weatherElement[1].time[0].parameter.parameterName <= 30) {
-            //     card.style['background-color'] = '#7AA4A6'
-            // }else if (location[index].weatherElement[1].time[0].parameter.parameterName <= 60){
-            //     card.style['background-color'] = '#4E6A79'
-            // }else{
-            //     card.style['background-color'] = '#2C4357'
-
-            // }
           }
         });
     </script>
